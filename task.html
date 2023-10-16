@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale= 1.0">
+    <title> My First Website Portfolio</title>
+    <script src="https://kit.fontawesome.com/c4254e24a8.js" crossorigin="anonymous"></script>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
+    <style>
+        :root{
+    --main-color:#000000;
+    --black:#d4cbcb;
+    --red: #c74254;
+    --bg:#fff;
+    --light-bg:#eee;
+    --light-color:#666;
+    --border:1px solid rgba(0,0,0,.1);
+    --box-shadow:0 5px 10px rgba(0,0,0,.1);
+    --dark-bg: #000;
+    --dark-text: #fff;
+    --only :#fff;
+    --particle-color: #ff0000;
+  }
+  
+*{
+    margin :0 ;
+    padding: 0;
+    font-family: 'Poppins' , sans-serif;
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+
+body{
+    background: var(--light-color);
+    color: var(--bg);
+    
+}
+body.active{
+    --black:#fff;
+    --bg:#262626;
+    --light-bg:#333;
+    --light-color:#eee;
+    --border:1px solid rgba(255,255,255,.1);
+    --box-shadow:0 5px 10px rgba(0,0,0,.3);
+  }
+
+.outer-border {
+    padding: 20px; 
+    border-radius: 5px; 
+    
+  }
+  
+  .inner-content {
+    padding: 10px; 
+  }
+  
+  
+  .tab-content {
+    display: none;
+}
+  
+  .tab-content.active-tab {
+    display: block;
+}
+#header {
+    width: 100%;
+    height: 100vh;
+    background-position:90% 50%;
+    background-size: 600px 800px;
+
+}
+.container {
+    padding: 10px 10%;
+}
+nav {
+     display :flex;
+     align-items: center;
+     justify-content:space-between;
+     flex-wrap: wrap;
+}
+.logo{
+    width: 300px ;
+}
+nav ul {
+    list-style: none;
+    padding: 0; 
+}
+nav ul li {
+    display: inline-block;
+    margin: 10px 20px;
+    animation: slideTop .5s ease forwards;
+    animation-delay: calc(.2s * var(--i));
+    
+}
+nav ul li a {
+    color:var(--bg);
+    text-decoration: none;
+    font-size: 20px;
+    position: relative;
+    color: var(--only);
+}
+nav ul li a::after{
+    content: '';
+    width: 0;
+    height: 3px;
+    background: var(--red);
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: 0.5s;
+}
+nav ul li a:hover::after{
+    width: 100%;
+}
+.header-text {
+    margin-top: 20%;
+    font-size: 30px;    
+}
+.header-text h1 {
+    font-size: 60px;
+    margin-top:20px;
+    margin: 10px 20px;
+    animation: slideBottom 1s ease forwards;
+    animation-delay: calc(0.3s * var(--i));
+}
+.header-text h1 span {
+    color:var(--red);
+    
+}
+.header p span {
+    color:var(--bg);
+}
+*/ -----about---- */
+#about {
+    padding: 80px 0;
+    color:#161313;
+}
+.row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.about-col-1{
+    flex-basis: 35%;
+}
+.about-col-1 img {
+    width: 100%;
+    border-radius: 15px;
+}
+.about-col-2{
+    flex-basis:60%;
+    
+}
+.sub-title{
+    font-size: 40px;
+    font-weight: 500;
+    color: var(--bg);
+}
+.tab-titles{
+    display: flex;
+    margin: 20px 0 40px;   
+}
+.tab-links{
+    margin-right: 50px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+}
+.tab-links::after{
+    content: '';
+    width: 0 ;
+    height: 3px;
+    background: var(--red);
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    transition: 0.5s;
+}
+.tab-links.active-link::after{
+    width: 30%;
+}
+.tab-contents ul li{
+    list-style-type: none;
+    margin: 10px 0; 
+}
+.tab-contents ul li span{
+    color: var(--red);
+    font-size: 14px;
+}
+.tab-contents{
+    display: none;
+}
+.tab-contents.active-tab{
+    display:block;
+}
+#services {
+    padding: 30px 0;
+}
+.services-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 40px;
+    margin-top: 50px;
+}
+.services-list div{
+    background: #262626;
+    padding: 40px;
+    font-size: 13px;
+    font-weight: 300;
+    border-radius: 10px;
+    transition: background 0.5s,transform 0.5s;
+}
+.services-list div i {
+    font-size: 50px;
+    margin-bottom: 30px;
+}
+.services-list div h2{
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+.services-list div a {
+    text-decoration: none;
+    color: var(--bg);
+    font-size: 11px;
+    margin-top: 20px;
+    display: inline-block;
+}
+.services-list div:hover{
+    background:var(--red);
+    transform: translate(-10px);
+}
+#portfolio {
+    padding: 50px 0;
+  }
+  
+  .work-list {
+    display: flex; 
+    flex-wrap: wrap; 
+    margin-top: 50px;
+    justify-content: space-between; 
+}
+
+  
+.work {
+    flex-basis: calc(50% - 20px); 
+    margin-bottom: 20px; 
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 5px 10px rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+  
+.work img {
+    width: 100%;
+    border-radius: 10px;
+    display: block;
+    transition: transform 0.3s ease-in-out;
+}
+.work:hover {
+    transform: scale(1.05); 
+}
+  .layer {
+    width: 100%;
+    height:100%;
+    background: linear-gradient(rgba(80, 70, 70, 0.6),#000);
+    border-radius: 10px;
+
+  }
+  .link a{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 2px solid var(--red);
+    border-radius: 50%;
+    font-size: 20px;
+    text-decoration: none;
+    color: var(--red);
+    margin:30px 15px 30px 0;
+  }
+  .link a:hover{
+    background: var(--red);
+    color:#000;
+    box-shadow: 0 0 20px var(--red);
+  }
+  .download-btn{
+    display:inline-flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+    border: 2px solid var(--red);
+    border-radius: 50%;
+    color: var(--bg);
+    padding: 1rem 2rem;
+    font-size: 2rem;
+    text-decoration: none;
+    border-radius:5px;
+}
+
+.download-btn:hover {
+    background: var(--red);
+    color:#000;
+    box-shadow: 0 0 20px var(--red);
+}
+.layer a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 60px;
+    text-align: center;
+    border: 2px solid var(--red);
+    font-size: 20px;
+    text-decoration: none;
+    color: var(--red);;
+    margin:30px 15px 30px 30px;
+}
+.layer a:hover {
+    background: var(--red);
+    color:#000;
+    box-shadow: 0 0 20px var(--red);
+}
+
+@keyframes slideTop {
+    from {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+@keyframes slideBottom {
+    from {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+#theme-open{
+  position: fixed;
+  top:15px; right:20px;
+  font-size: 40px;
+  color:var(--black);
+  cursor: pointer;
+  z-index: 10;
+}
+
+.themes-container{
+  position:fixed;
+  top:0; right:-100%;
+  background:var(--bg);
+  border-left: var(--border);
+  height:100vh;
+  width:350px;
+  z-index: 1000;
+  text-align: right;
+  padding:20px;
+}
+
+.themes-container.active{
+  right:0;
+}
+
+.themes-container #theme-close{
+  font-size: 40px;
+  color:var(--black);
+  cursor: pointer;
+}
+
+.themes-container h3{
+  text-align: center;
+  color:var(--black);
+  border-top: var(--border);
+  border-bottom: var(--border);
+  padding:15px 0;
+  margin:20px 0;
+}
+
+.themes-container .theme-toggler{
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.themes-container .theme-toggler span{
+  color:var(--light-color);
+}
+
+.themes-container .theme-toggler .toggler{
+  height:40px;
+  width:100px;
+  border-radius: 50px;
+  background:var(--light-bg);
+  position: relative;
+  cursor: pointer;
+  border:var(--border);
+  margin:0 10px;
+}
+
+.themes-container .theme-toggler .toggler::before{
+  content:'';
+  position: absolute;
+  top:5px; left:5px;
+  height:28px;
+  width:28px;
+  border-radius: 50%;
+  background:var(--bg);
+  transition:.2s linear;
+}
+
+.themes-container .theme-toggler.active .toggler::before{
+  left:65px;
+}
+
+.themes-container .theme-colors{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap:15px;
+}
+
+.themes-container .theme-colors .color{
+  border-radius: 5px;
+  height:50px;
+  width:50px;
+  cursor: pointer;
+}
+
+.themes-container .theme-colors .color:hover{
+  opacity: .5;
+}
+
+.custom-box {
+    display: inline-block;
+    background-color: #0074d9; 
+    color: #ffffff; 
+    font-size: 12px;
+    font-weight: bold;
+    padding: 4px 8px;
+    border-radius: 4px;
+    margin-right: 8px; 
+}
+.framework i{
+    color: var(--red);
+    margin: 15px 3px 3px 5px;
+    font-size: 60px;
+}
+#particles-js {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; 
+  }
+    /* CSS equivalent to the provided HTML classes */
+.my-custom-div.relative {
+  position: relative;
+}
+
+.my-custom-div.isolate {
+  isolation: isolate;
+}
+
+.my-custom-div.px-6 {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.my-custom-div.pt-14 {
+  padding-top: 3.5rem;
+}
+
+.my-custom-div.lg-px-8 {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.innerdiv {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 2xl;
+}
+
+.innerdiv.sm-py-48 {
+  padding-top: 12rem; 
+}
+
+.innerdiv.md-py-38 {
+  padding-top: 9.5rem; 
+}
+
+.innerdiv.lg-py-28 {
+  padding-top: 7rem; 
+}
+
+.custom-heading {
+  text-align: center;
+  margin-top: 2.5rem; 
+  font-size: 1.5rem; 
+  line-height: 1;
+  color: #ffffff; 
+}
+
+@media (min-width: 768px) {
+  .custom-heading {
+    font-size: 2.5rem; 
+  }
+}
+
+@media (min-width: 1024px) {
+  .custom-heading {
+    font-size: 2rem; 
+  }
+}
+
+@media (min-width: 1280px) {
+  .custom-heading {
+    font-size: 1.25rem; 
+  }
+  .custom-heading.dark {
+    color: #fff; 
+  }
+}
+
+.custom-grid {
+  display: grid;
+  gap: 1rem; 
+}
+
+.custom-image {
+  height: auto;
+  max-width: 90%;
+  border-radius: 0.25rem; 
+}
+.grid{
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    gap: 1rem;
+}
+
+.custom-flex {
+  display: flex;
+  margin-top: 0.75rem; 
+}
+
+.custom-text {
+  color: #ffffff; 
+  font-weight: 100;
+}
+
+.custom-container {
+  white-space: nowrap; 
+  overflow-x: auto; 
+}
+
+.custom-box {
+  display: inline-block;
+  background-color: #0074d9;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 4px 8px;
+  border-radius: 4px;
+  margin-right: 8px;
+}
+
+
+.custom-container {
+  margin-top: 10px; 
+}
+
+
+.dark .custom-box {
+  background-color: #001f3f;
+  color: #a8d2ff;
+}
+
+
+.custom-card {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  overflow: hidden;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.custom-card-header {
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.custom-heading {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+}
+
+.custom-card-content {
+  display: flex;
+}
+
+.custom-image-container {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.custom-image {
+  max-width: 100%;
+  height: auto;
+}
+
+.custom-metadata {
+  flex: 2;
+}
+
+.custom-flex {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.custom-text {
+  font-size: 14px;
+  color: #555;
+  margin-right: 10px;
+}
+
+.custom-tags {
+  margin-bottom: 10px;
+}
+
+.custom-box {
+  display: inline-block;
+  background-color: #0074d9;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 4px 8px;
+  border-radius: 4px;
+  margin-right: 8px;
+}
+
+
+p {
+  font-size: 14px;
+  color: #fcfcfc;
+  margin: 0;
+}
+
+    </style>
+</head>
+<body>
+    <div id="particles-js"></div>
+    <div class="outer-border" >
+        
+        <div id="theme-open" class="fas fa-bars"></div>
+    <div class="inner-content">
+<div data-aos="fade-up" data-aos-duration="600" data-aos-easing="linear">
+<header class="header">
+<div id="header">
+    <div class="container">
+        <nav>
+            <img src="" class="logo">
+            <ul>
+                <li style="--i: 1;"><a href="index.html " class="active"> Home</a></li>
+            
+                
+            </ul>
+        </nav>
+        
+        <div class="custom-card">
+            <div class="custom-card-header">
+        <div class="my-custom-div relative isolate px-6 pt-14 lg-px-8">
+            <div class="innerdiv mx-auto max-w-2xl sm-py-48 md-py-38 lg-py-28">
+                <h1 class="custom-heading">
+                    Task Manager Website
+                  </h1>       
+                  <div class="custom-grid">
+                    <div>
+                        <img class="custom-image" src="images/TASK.png" alt="">
+                    </div>
+                    <div class="grid">
+    
+                      </div>
+                      <div class="custom-flex">
+                        Date: July- August 2022
+                      </div>
+                      Tags:
+                      <div class="custom-container">
+                      <span class="custom-box">php</span>
+                     <span class="custom-box">node.js</span>
+                     <span class="custom-box">html</span>
+                     <span class="custom-box">css</span>
+                     <span class="custom-box">javascript </span>
+                     <span class="custom-box">Bootstrap</span>
+                    </div>
+                    <p> <strong> Description: </strong> A task manager website where manage the movements of the intern in MCC</p>
+                      
+                  </div>
+                             
+              </div>
+              
+          </div>
+        </div>
+    </div>
+    </div>
+</div>
+</div>
+</div>
+<div class="themes-container">
+
+    <div id="theme-close" class="fas fa-times"></div>
+
+    <h3>Switch theme</h3>
+
+    <div class="theme-toggler">
+        <span>Light</span>
+        <span class="toggler"></span>
+        <span>Dark</span>
+    </div>
+
+    <h3>Pick a color</h3>
+
+    <div class="theme-colors">
+        <div class="color" style="background:#2980b9"></div>
+        <div class="color" style="background:#27ae60;"></div>
+        <div class="color" style="background:#ffa502;"></div>
+        <div class="color" style="background:#8e44ad;"></div>
+        <div class="color" style="background:#0fb9b1;"></div>
+        <div class="color" style="background:#ffd32a;"></div>
+        <div class="color" style="background:#ff0033;"></div>
+        <div class="color" style="background:#e84393;"></div>
+    </div>
+
+</div>
+
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="js/main.js"></script>
+<script src="js/tailwind.config.js"></script>
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+<script> 
+var tablinks =document.getElementsByClassName ("tab-links");
+var tabcontents =document.getElementsByClassName ("tab-contents");
+function opentab (tabname) {
+    for (tablink of tablinks) {
+        tablink.classList.remove("active-link");
+    }
+    for (tabcontent of tabcontents) {
+        tabcontent.classList.remove ("active-tab");
+    }
+    event.currentTarget.classList.add("active-link");
+    document.getElementById (tabname).classList.add("active-tab");
+
+
+}
+</script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const scrollToTopLinks = document.querySelectorAll('a[href^="#"]');
+    
+    for (const link of scrollToTopLinks) {
+        link.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href').substring(1);
+            const targetElement = document.getElementById(targetId);
+            
+            if (targetElement) {
+                targetElement.scrollIntoView({
+                    behavior: 'smooth',
+                    
+                });
+            }
+        });
+    }
+});
+
+ </script>
+ <script>
+   
+    $(document).ready(function () {
+        $('.page-transition').addClass('active');
+    });
+</script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init();
+</script>
+
+<script>
+    
+let themeToggler = document.querySelector('.theme-toggler');
+
+
+themeToggler.onclick = () => {
+    themeToggler.classList.toggle('active');
+
+    if (themeToggler.classList.contains('active')) {
+        document.body.classList.add('active');
+        
+    } else {
+        document.body.classList.remove('active');
+    }
+}
+
+document.querySelectorAll('.theme-colors .color').forEach(color => {
+    color.onclick = () => {
+        let background = color.style.background;
+        
+        
+        document.querySelector(':root').style.setProperty('--red', background);
+        document.querySelector(':root').style.setProperty('--only', background);
+    
+        let specificElement = document.querySelector('.outer-border .active');
+        specificElement.style.color = background;
+    }
+});
+
+
+
+
+let theme = document.querySelector('.themes-container');
+
+document.querySelector('#theme-open').onclick = () => {
+    theme.classList.add('active');
+    document.body.style.paddingRight = '350px';
+}
+
+document.querySelector('#theme-close').onclick = () => {
+    theme.classList.remove('active');
+    document.body.style.paddingRight = '0px';
+}
+</script>
+<script>
+     const particleColor = getComputedStyle(document.documentElement).getPropertyValue('--particle-color');
+        particlesJS("particles-js", {
+        particles: {
+            number: { value: 80, density: { enable: true, value_area: 800 } },
+            shape: {
+            type: "edge",
+            stroke: { width: 0, color: "#000000" },
+            polygon: { nb_sides:5 },
+            },
+        opacity: {
+          value: 0.7,
+          random: true,
+          anim: { enable: true, speed: 1, opacity_min: 0, sync: false },
+        },
+        size: {
+          value: 3,
+          random: true,
+          anim: { enable: false, speed: 4, size_min: 0.3, sync: false },
+        },
+        line_linked: {
+          enable: true,
+          distance: 150,
+          color: "#000000",
+          opacity: 0.2,
+          width: 0.5,
+        },
+        move: {
+          enable: true,
+          speed: 1,
+          direction: "none",
+          random: true,
+          straight: false,
+          out_mode: "out",
+          bounce: false,
+          attract: { enable: false, rotateX: 600, rotateY: 1200 },
+        },
+      },
+      interactivity: {
+        detect_on: "canvas",
+        events: {
+          onhover: { enable: true, mode: "grab" },
+          onclick: { enable: true, mode: "push" },
+          resize: true,
+        },
+        modes: {
+          grab: { distance: 140, line_linked: { opacity: 1 } },
+          bubble: { distance: 400, size: 40, duration: 2, opacity: 8, speed: 3 },
+          repulse: { distance: 200, duration: 0.4 },
+          push: { particles_nb: 4 },
+          remove: { particles_nb: 2 },
+        },
+      },
+      retina_detect: true,
+    });
+  </script>
+  
+</body>
+</html>
